@@ -2,10 +2,31 @@ auca-judge-agent
 ================
 
 *auca-judge-agent* is a remote control agent for build and test execution inside
-containers for the *auca-judge* system.
+containers for the [auca-judge](https://github.com/toksaitov/auca-judge) system.
 
 *auca-judge-agent* allows to move the build and test container runtime to a
-separate host from the *auca-judge* back end.
+separate host from the [auca-judge-back](https://github.com/toksaitov/auca-judge-back).
+
+# Services
+
+*auca-judge-agent* is part of the [auca-judge](https://github.com/toksaitov/auca-judge)
+system to test code submissions to help to conduct laboratory classes or
+programming contests at [AUCA](https://auca.kg).
+
+* UI front
+  * [auca-judge-front](https://github.com/toksaitov/auca-judge-front)
+* Queue service
+  * [auca-judge-queue](https://github.com/toksaitov/auca-judge-queue)
+* Task runner
+  * [auca-judge-back](https://github.com/toksaitov/auca-judge-back)
+* Container's control and communication endpoint
+  * [auca-judge-agent](https://github.com/toksaitov/auca-judge-agent)
+* Images for various programming languages and environments
+  * [auca-judge-images](https://github.com/toksaitov/auca-judge-images)
+
+## Prerequisites
+
+* *Go* `>=1.5`
 
 ## Configuration
 
@@ -127,6 +148,14 @@ all generated artifact files specified in the configuration.
   }
 }
 ```
+
+## Containerization
+
+* `docker-compose build` to build the image
+
+## Docker Hub
+
+* [toksaitov/auca-judge-agent](https://hub.docker.com/r/toksaitov/auca-judge-agent)
 
 ## Licensing
 
