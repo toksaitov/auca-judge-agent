@@ -634,8 +634,10 @@ func runCommand(requestDirectory string) (responseResult ResponseResultFormat, e
 }
 
 func handleProcessPath(responseWriter http.ResponseWriter, request *http.Request) {
+    id, _ :=
+        uuid.NewV4()
     requestID :=
-        uuid.NewV4().String()
+        id.String()
 
     Info.Printf("Handling the request '%s'\n", requestID)
 
@@ -722,8 +724,8 @@ func startServer() {
 }
 
 func main() {
-    ID = uuid.NewV4().String()
-    os.Setenv(AgentIdentificationEnvironmentKey, ID)
+    id, _ := uuid.NewV4()
+    os.Setenv(AgentIdentificationEnvironmentKey, id.String())
 
     setupLoggers()
     Info.Println("Starting")
